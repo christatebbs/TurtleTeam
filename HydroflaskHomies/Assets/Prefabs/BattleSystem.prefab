@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1520613022822712}
+  m_IsPrefabParent: 1
+--- !u!1 &1520613022822712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4507368047943876}
+  - component: {fileID: 114788637307167708}
+  m_Layer: 0
+  m_Name: BattleSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4507368047943876
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520613022822712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3270581, y: 0.21819133, z: -2.0501363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114788637307167708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520613022822712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f276cc659434db29a57c4d7bb98468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  playerPrefab: {fileID: 1740910202605964, guid: 624f43db40e3b46a5922d6ce3b5a8ae2,
+    type: 2}
+  enemyPrefab: {fileID: 1611869259501188, guid: 6219eb6b9d1a746849a81beed5731d62,
+    type: 2}
+  skillPrefab: {fileID: 1851509854880488, guid: 8ee35284a852e4c98827c00f3d39d572,
+    type: 2}
+  dialogueBox: {fileID: 0}
+  playerBattleStation: {fileID: 0}
+  enemyBattleStation: {fileID: 0}
+  skillContent: {fileID: 0}
+  playerHUD: {fileID: 0}
+  enemyHUD: {fileID: 0}
+  dialogueText: {fileID: 0}
+  skillText: {fileID: 114766335437317868, guid: 8ee35284a852e4c98827c00f3d39d572,
+    type: 2}
+  skills: {fileID: 0}
