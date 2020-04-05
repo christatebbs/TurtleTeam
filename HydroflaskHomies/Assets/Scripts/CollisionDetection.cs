@@ -45,13 +45,27 @@ public class CollisionDetection : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		Debug.Log ("Collision detected"); 
 		StartCoroutine (Lag ()); 
+		if (collision.gameObject.GetComponent<OverworldObject>().name == "FirstBattle") { 
+			collision.gameObject.GetComponent<Renderer> ().enabled = false;
+			collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+			collision.gameObject.GetComponent<ObjectHiding> ().hidden = true; 
+			global.GetComponent<GlobalControl>().addHiddenGameObject (collision.gameObject.name); 
+			SceneManager.LoadScene ("FirstBattle");
+		} 
+		if (collision.gameObject.GetComponent<OverworldObject>().name == "SecondBattle") { 
+			collision.gameObject.GetComponent<Renderer> ().enabled = false;
+			collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+			collision.gameObject.GetComponent<ObjectHiding> ().hidden = true; 
+			global.GetComponent<GlobalControl>().addHiddenGameObject (collision.gameObject.name); 
+			SceneManager.LoadScene ("SecondBattle");
+		} 
 		if (collision.gameObject.GetComponent<OverworldObject>().name == "Wrapuchin") { 
 			global.GetComponent<GlobalControl>().nextFight = "Wrapuchin"; 
 			collision.gameObject.GetComponent<Renderer> ().enabled = false;
 			collision.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 			collision.gameObject.GetComponent<ObjectHiding> ().hidden = true; 
 			global.GetComponent<GlobalControl>().addHiddenGameObject (collision.gameObject.name); 
-			SceneManager.LoadScene ("Battle3");
+			SceneManager.LoadScene ("Battle");
 		} else if (collision.gameObject.GetComponent<OverworldObject>().name == "Octopeel") { 
 			global.GetComponent<GlobalControl>().nextFight = "Octopeel"; 
 			collision.gameObject.GetComponent<Renderer> ().enabled = false;

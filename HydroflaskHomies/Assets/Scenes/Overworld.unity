@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 79665126}
   - component: {fileID: 79665127}
   m_Layer: 0
-  m_Name: Octopeel
+  m_Name: SecondBattle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 79665122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.69, y: -3.07, z: 0}
+  m_LocalPosition: {x: 1.26, y: 2.95, z: 0}
   m_LocalScale: {x: 0.17413363, y: 0.22316301, z: 3.050413}
   m_Children: []
   m_Father: {fileID: 0}
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab2f97109c4a4f5f82269cd94dfe905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Octopeel
+  name: SecondBattle
 --- !u!1 &87614757
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,10 +604,10 @@ RectTransform:
   m_Father: {fileID: 1114441192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 60, y: -60}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &101219639
 MonoBehaviour:
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 464756705}
   - component: {fileID: 464756706}
   m_Layer: 0
-  m_Name: Wrapuchin1
+  m_Name: FirstBattle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1296,7 +1296,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464756701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.26, y: 2.83, z: 0}
+  m_LocalPosition: {x: -1.3, y: 3.1, z: 0}
   m_LocalScale: {x: 2.04813, y: 2.04813, z: 2.04813}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab2f97109c4a4f5f82269cd94dfe905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Wrapuchin
+  name: FirstBattle
 --- !u!1 &465033685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,7 +2398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &693454375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &950196469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3664,7 +3664,7 @@ Prefab:
     - target: {fileID: 114746743170386446, guid: 6c6817ac35899481883650d8b64a925a,
         type: 2}
       propertyPath: currentHP
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6817ac35899481883650d8b64a925a, type: 2}
@@ -4151,7 +4151,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4429,7 +4429,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2086898849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.82, y: 3.05, z: 0}
+  m_LocalPosition: {x: -6.1, y: 0.16, z: 0}
   m_LocalScale: {x: 0.17413363, y: 0.22316301, z: 3.050413}
   m_Children: []
   m_Father: {fileID: 0}
