@@ -603,7 +603,6 @@ public class SecondBattle: MonoBehaviour {
 	}
 
 	public void OnEnemySelected(Button button){ 
-		Debug.Log (thisAttack.name); 
 		Debug.Log ("enemy select"); 
 		Debug.Log (button.name); 
 

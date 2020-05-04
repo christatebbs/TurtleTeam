@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4462858802948192}
   - component: {fileID: 114871011915229976}
   - component: {fileID: 114386454672445180}
-  - component: {fileID: 114505224943935030}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -106,17 +105,6 @@ MonoBehaviour:
   requiredExperience: 0
   stats: 
   PlayerPrefab: {fileID: 1740910202605964}
---- !u!114 &114505224943935030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1740910202605964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c79e2138d0404211975506ab6b2f1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114871011915229976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,6 +124,7 @@ MonoBehaviour:
   currentSP: 0
   pt: 0
   attackList: []
+  inventoryList: []
 --- !u!212 &212325620216350222
 SpriteRenderer:
   m_ObjectHideFlags: 1

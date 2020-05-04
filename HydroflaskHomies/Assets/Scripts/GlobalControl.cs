@@ -14,6 +14,7 @@ public class GlobalControl : MonoBehaviour {
 	public int playerLevel; 
 	public int[] stats; 
 	public List<Attack> attackList; 
+	public List<Item> inventoryList; 
 	public int currentExperience;
 	public int requiredExperience;
 	public int maxHP; 
@@ -46,5 +47,9 @@ public class GlobalControl : MonoBehaviour {
 
 	public void addHiddenGameObject(string objectName){ 
 		gameObjectsToHide.Add (objectName);
+	} 
+
+	public void removeFromInventory(Item toRemove){ 
+		inventoryList.Remove (toRemove); 
 	} 
 }

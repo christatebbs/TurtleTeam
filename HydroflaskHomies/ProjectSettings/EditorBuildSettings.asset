@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondBattle.unity
     guid: df22652c842eb41a9a6fb686f9227511
+  - enabled: 1
+    path: Assets/Scenes/DimragOne.unity
+    guid: 34041783ebdd64441ab68eb6a91bff56

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 	//keep track of unit info and update UI
@@ -8,13 +6,17 @@ public class Enemy : MonoBehaviour {
 	public int unitLevel;
 	public bool isKilled;
 
+	private Item drop;
+	public string itemName;
+	public string itemDescription;
+	public string itemEffect; 
+	public int itemHealing; 
+ 	
+	public int dropChance; 
+
 	//keep track of what damage it does
 	//public int damage;
 	public int[] stats = new int[5]; 
-
-	//Similar to our player, the enemy will need a list of Attacks to cycle between. 
-
-	//public List<Attack> attackList;
 
 	//keep track of health and current health
 	public int maxHP; 
@@ -27,8 +29,12 @@ public class Enemy : MonoBehaviour {
 	public int experience; 
 	public int pt; 
 
-	public void Start(){ 
-		
+	void Start(){ 
+		drop = gameObject.AddComponent<Item> (); 
+		drop.name = itemName; 
+		drop.description = itemDescription; 
+		drop.effect = itemEffect; 
+		drop.healing = itemHealing; 
 	} 
 	//this function subtracts damage to update the currentHP
 	//it also returns either true or false depending on if the unit has died 

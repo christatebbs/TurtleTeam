@@ -611,16 +611,34 @@ public class FirstBattle: MonoBehaviour {
 	}
 
 	public void OnEnemySelected(Button button){ 
-		Debug.Log (thisAttack.name); 
 		Debug.Log ("enemy select"); 
 		Debug.Log (button.name); 
-		if(state == FirstBattleState.ENEMYSELECTHIT) { 
-			String enemyToHit = button.name;
-			StartCoroutine(Hit(enemyToHit)); 
-		} else if (state == FirstBattleState.ENEMYSELECTSKILL){ 
-			String enemyToHit = button.name;
-			StartCoroutine(PlayerAttack(thisAttack, enemyToHit)); 
+
+		String enemyToHit = button.name;
+
+		Enemy enemyUnit = enemyUnitOne;
+
+		if (enemyToHit == "EnemyOne") { 
+			enemyUnit = enemyUnitOne;
+		} else if (enemyToHit == "EnemyTwo") { 
+			enemyUnit = enemyUnitTwo;	
+		} else if (enemyToHit == "EnemyThree") {
+			Debug.Log ("enemy three"); 
+			enemyUnit = enemyUnitThree;		
+		} else { 
+			Debug.Log ("Something is wrong"); 
 		} 
+
+		if (enemyUnit.isKilled) {	
+			Debug.Log ("selected dead enemy"); 
+			dialogueText.text = "This enemy has already been defeated! Please select a different target."; 
+		} else { 
+			if (state == FirstBattleState.ENEMYSELECTHIT && !enemyUnit.isKilled) { 
+				StartCoroutine (Hit (enemyToHit)); 
+			} else if (state == FirstBattleState.ENEMYSELECTSKILL) { 
+				StartCoroutine (PlayerAttack (thisAttack, enemyToHit)); 
+			} 
+		}
 	} 
 
 	IEnumerator Hit(String enemyToHit){ 
@@ -693,13 +711,18 @@ public class FirstBattle: MonoBehaviour {
 		if (isDead) { 
 			enemyUnit.isKilled = true; 
 			enemiesAlive -= 1; 
-			yield return new WaitForSeconds (2f);
 			dialogueText.text = "You killed Wrapuchin!"; 
 			yield return new WaitForSeconds (2f); 
-		} 
 
-		//dialogueText.text = "You hit the enemy!"; 
-		yield return new WaitForSeconds (2f); 
+			System.Random randomDrop = new System.Random();  
+			int dropChance = randomDrop.Next (0, 101); 
+			Debug.Log ("drop number generated: " + dropChance); 
+			if (dropChance <= enemyUnit.dropChance) { 
+				dialogueText.text = "The enemy dropped a " + enemyUnit.itemName + "!"; 
+				playerUnit.addItemFromDrop(enemyUnit.GetComponent<Item> ()); 
+				yield return new WaitForSeconds (2f); 
+			} 
+		} 
 
 		//check if the enemy is dead 
 		//change state based on result 
@@ -885,9 +908,17 @@ public class FirstBattle: MonoBehaviour {
 			if (isDead) { 
 				enemyUnit.isKilled = true; 
 				enemiesAlive -= 1; 
-				yield return new WaitForSeconds (2f);
 				dialogueText.text = "You killed Wrapuchin!"; 
 				yield return new WaitForSeconds (2f); 
+
+				System.Random randomDrop = new System.Random();  
+				int dropChance = randomDrop.Next (0, 101); 
+				Debug.Log ("drop number generated: " + dropChance); 
+				if (dropChance <= enemyUnit.dropChance) { 
+					dialogueText.text = "The enemy dropped a " + enemyUnit.itemName + "!"; 
+					playerUnit.addItemFromDrop(enemyUnit.GetComponent<Item> ()); 
+					yield return new WaitForSeconds (2f); 
+				} 
 			} 
 
 			if (enemiesAlive == 0) {
@@ -973,23 +1004,12 @@ public class FirstBattle: MonoBehaviour {
 	} 
 
 	public void SavePlayerData(){ 
-		playerLevel.SaveLevelInfo ();
-		GlobalControl.Instance.attackList = playerUnit.attackList;
-		GlobalControl.Instance.maxHP = playerUnit.maxHP; 
-		GlobalControl.Instance.currentHP = playerUnit.currentHP;
-		GlobalControl.Instance.maxSP = playerUnit.maxSP; 
-		GlobalControl.Instance.currentSP = playerUnit.currentSP;
-		GlobalControl.Instance.pt = playerUnit.pt; 
+		playerLevel.SaveLevelInfo (); 
+		playerUnit.savePlayerData (); 
 	} 
 
 	public void LoadPlayerData(){ 
 		playerLevel.LoadLevelInfo ();
-		playerUnit.attackList = GlobalControl.Instance.attackList;
-		playerUnit.maxHP = GlobalControl.Instance.maxHP; 
-		playerUnit.currentHP = GlobalControl.Instance.currentHP;
-		playerUnit.maxSP = GlobalControl.Instance.maxSP; 
-		playerUnit.currentSP = GlobalControl.Instance.currentSP;
-		playerUnit.pt = GlobalControl.Instance.pt; 
-		//enemyUnit.thisFight = GlobalControl.Instance.nextFight; 
+		playerUnit.loadPlayerData (); 
 	} 
 }

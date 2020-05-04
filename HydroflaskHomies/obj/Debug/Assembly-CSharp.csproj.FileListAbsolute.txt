@@ -1,0 +1,3 @@
+/Users/christianatebbs/Desktop/Unity/TurtleTeam/HydroflaskHomies/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
+/Users/christianatebbs/Desktop/Unity/TurtleTeam/HydroflaskHomies/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+/Users/christianatebbs/Desktop/Unity/TurtleTeam/HydroflaskHomies/obj/Debug/Assembly-CSharp.dll
